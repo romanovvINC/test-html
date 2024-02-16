@@ -1,0 +1,242 @@
+.slider-wrapper {
+    position: relative;
+    margin-bottom: 124px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 100px;
+    }
+    @media screen and (max-width: 375px) {
+        margin-bottom: 50px;
+    }
+}
+
+.slider-wrapper .image-list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 40px;
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 0;
+    }
+    @media screen and (max-width: 375px) {
+        margin-bottom: 0;
+    }
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-wrapper #image-list-1 .image-item {
+    width: 552px;
+    height: 396px;
+    object-fit: cover;
+}
+
+.slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+    background: #F2F2F2;
+    width: 100%;
+    height: 8px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+    height: 8px;
+    color: #00A55A;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    background: #00A55A;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    height: 100%;
+    cursor: grab;
+    border-radius: inherit;
+}
+
+.slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+.slider-controls-gallery {
+    display: flex;
+    align-items: center;
+    height: 56px;
+}
+
+.slider-scrollbar {
+    margin-right: 40px;
+}
+.slide-button {
+    border: 1px solid #00A55A;
+    .svgArrow {
+        stroke: #00A55A;
+    }
+    height: 56px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.slide-button:disabled {
+    height: 56px;
+    border: none;
+    .svgArrow {
+        stroke: #D9D9D9;
+    }
+    aspect-ratio: 1 / 1;
+    cursor: auto;
+}
+
+#prev-slide-1, #prev-slide-2 {
+    margin-right: 16px;
+}
+
+/* Styles for tablets */
+@media only screen and (max-width: 768px) {
+    .slider-wrapper .slide-button {
+        display: none !important;
+    }
+
+    .slider-wrapper .image-list {
+        scroll-snap-type: x mandatory;
+    }
+
+    .slider-scrollbar .scrollbar-thumb {
+        width: 20%;
+    }
+
+    #image-list-2 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .slider-wrapper .image-list {
+        gap: 24px;
+        scroll-snap-type: x mandatory;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .slider-wrapper .image-list {
+        gap: 24px;
+        scroll-snap-type: x mandatory;
+    }
+
+    #image-list-2 {
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    #image-list-1 .image-item {
+        width: 351px;
+        height: 252px;
+    }
+
+    #image-list-2 .image-item {
+        width: 100%;
+    }
+}
+
+//workers slider styles
+
+.slider-controls-workers {
+    display: flex;
+    align-items: center;
+    height: 56px;
+
+    #prev-slide-1 {
+        margin-right: 16px;
+    }
+}
+
+
+.slider-workers-title-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    .slider-button-container {
+        display: flex;
+    }
+    .slider-workers-title {
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 58px;
+        margin: 0 0 32px;
+        @media screen and (max-width: 375px) {
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+    .slider-workers-description {
+        color: #282828;
+        font-size: 18px;
+        line-height: 28px;
+        @media screen and (max-width: 375px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+    .slide-button {
+        height: 56px;
+    }
+}
+
+#image-list-2 .image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 404px;
+    > img {
+        background-color: green;
+        width: 324px;
+        height: 366px;
+        object-fit: cover;
+    }
+    .image-item-info {
+        width: 340px;
+        padding: 24px 32px;
+        border: 1px solid #D9D9D9;
+        border-top: none;
+        .worker-name {
+            margin: 0 0 8px;
+            padding: 0;
+            font-weight: 600;
+            color: black;
+            .worker-lastname {
+                white-space: pre;
+            }
+        }
+
+        .worker-job {
+            margin: 0;
+            padding: 0;
+            color: #818181;
+        }
+    }
+}

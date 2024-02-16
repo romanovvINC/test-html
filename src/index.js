@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './app/styles/index.scss';
+import './app/styles/slider-styles.scss';
+import './app/styles/header-slider-styles.scss';
 import reportWebVitals from './reportWebVitals';
+import {initSlider} from "./app/widgets/lib/slider/model/slider";
+import {gallerySliderElements, workersSliderElements} from "./app/widgets/lib/slider/model/scrollbars";
+import {initHeaderSlider} from "./app/widgets/lib/slider/model/header-slider";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+window.addEventListener("resize", initSlider(gallerySliderElements));
+window.addEventListener("load", initSlider(gallerySliderElements));
+
+window.addEventListener("resize", initSlider(workersSliderElements));
+window.addEventListener("load", initSlider(workersSliderElements));
+
+window.addEventListener("resize", initHeaderSlider);
+window.addEventListener("load", initHeaderSlider);

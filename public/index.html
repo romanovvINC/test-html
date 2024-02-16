@@ -2,42 +2,439 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/icons/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/icons/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <title>metall-market</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="wrapper">
+      <div class="container">
+        <header class="header">
+          <div class="headerFirst">
+            <div class="headerCity">
+              <img src="icons/geolocation.svg" alt="geolocation icon">
+              <p class="headerFirstText">Москва</p>
+            </div>
+            <div class="headerAboutMenu">
+              <a>Прайс-лист</a>
+              <div class="linkDown"><a>Справочники</a><img src="icons/arrow-down.svg" alt="arrow link"></div>
+              <div class="linkDown"><a>Сервис</a><img src="icons/arrow-down.svg" alt="arrow link"></div>
+              <div class="linkDown"><a>О нас</a><img src="icons/arrow-down.svg" alt="arrow link"></div>
+              <a>Доставка</a>
+              <a>Оплата</a>
+              <a>Контакты</a>
+            </div>
+            <div class="headerFirstContacts">
+              <div class="headerFirstContactsSection">
+                <img src="icons/email.svg" alt="email icon">
+                <p class="headerFirstText">metall-market@mail.ru</p>
+              </div>
+              <div class="headerFirstContactsSection headerFirstContactsSectionDiary">
+                <img src="icons/clock.svg" alt="clock icon">
+                <p class="headerFirstText">Ежедневно: 9:00 — 18:00</p>
+              </div>
+              <div class="headerFirstContactsSection headerFirstContactsSectionPhone">
+                <img src="icons/phone-grey.svg" alt="phone icon">
+                <p class="headerFirstText">8-800-000-00-00</p>
+              </div>
+            </div>
+          </div>
+          <div class="headerSecond">
+            <button class="catalogButton">
+              <img src="icons/catalog-white.svg" alt="catalog icon">
+              Каталог
+            </button>
+            <div class="searchInput">
+              <img src="icons/search-grey.svg" alt="search icon">
+              <input type="search" placeholder="Поиск...">
+            </div>
+            <div class="greyBackgroundSquare phoneHeaderButton">
+              <img class="phoneImage" alt="phone icon" src="icons/phone-black.svg">
+            </div>
+            <div class="phoneHeaderData">
+              <h1 class="phoneNumberText">8-800-000-00-00</h1>
+              <a>Заказать звонок</a>
+            </div>
+            <button class="greyBackgroundSquare userHeaderButton userHeaderButtonSearch">
+              <img class="phoneImage" alt="phone icon" src="icons/search-black.svg">
+            </button>
+            <button class="greyBackgroundSquare userHeaderButton userHeaderButtonFavorite">
+              <img class="phoneImage" alt="phone icon" src="icons/star.svg">
+              <span class="notificationNumber">1</span>
+            </button>
+            <button class="greyBackgroundSquare userHeaderButton userHeaderStorage">
+              <img class="phoneImage" alt="phone icon" src="icons/storage.svg">
+              <span class="notificationNumber">10</span>
+            </button>
+            <button class="greyBackgroundSquare userHeaderButton aboutListButton">
+              <img class="phoneImage" alt="phone icon" src="icons/catalog-black.svg">
+            </button>
+          </div>
+          <div class="headerThird">
+            <div class="headerSliderWrapper">
+              <button id="headerSlideButtonPrev" class="headerSlideButton material-symbols-rounded">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 4L6 8L10 12" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <ul class="headerCatalogList">
+                <li class="discountHeaderSection">
+                  <img class="headerPercent" src="icons/percent.svg" alt="percent icon">
+                  <a>Скидки</a>
+                </li>
+                <li class="headerCatalogItem"><a>Арматура</a></li>
+                <li class="headerCatalogItem"><a>Костыль</a></li>
+                <li class="headerCatalogItem"><a>Отвод</a></li>
+                <li class="headerCatalogItem"><a>Рулон</a></li>
+                <li class="headerCatalogItem"><a>Труба квадратная</a></li>
+                <li class="headerCatalogItem"><a>Шайба</a></li>
+                <li class="headerCatalogItem"><a>Штрипс</a></li>
+                <li class="headerCatalogItem"><a>Круг</a></li>
+                <li class="headerCatalogItem"><a>Подкладка</a></li>
+                <li class="headerCatalogItem"><a>Сетка</a></li>
+                <li class="headerCatalogItem"><a>Нержавеющий металлопрокат</a></li>
+                <li class="headerCatalogItem"><a>Трубный прокат</a></li>
+              </ul>
+              <button id="headerSlideButtonNext" class="headerSlideButton material-symbols-rounded">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="headerScrollbar" id="headerScrollbar">
+                <div class="scrollbarTrack">
+                  <div class="scrollbarThumb"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main>
+          <nav class="pageNavigator">
+            <a class="navButton">
+              Главная
+            </a>
+            <span class="">—</span>
+            <a class="navButton navButtonActive">
+              Контакты
+            </a>
+          </nav>
+          <section class="pageSection">
+            <div class="contactsContainer">
+              <h1>Контакты</h1>
+              <div class="mapContainer">
+                <map class="contactsMap">
+                </map>
+                <div class="mapBlocks">
+                  <div class="mapWarningBlock">
+                    <div class="mapWarningWrapper">
+                      <img src="icons/warning.svg" alt="warning icon" />
+                      <p>Вход в офис находится на углу здания со стороны Ленинградского проспекта на пересечении с ул. Балтийская.</p>
+                    </div>
+                  </div>
+                  <div class="mapInfo">
+                    <div class="mapInfoContacts">
+                      <h2 class="mapInfoTitle">Контакты</h2>
+                      <div class="mapInfoSection mapInfoSectionPhones">
+                        <div class="mapCopySection">
+                          <div class="mapInfoSmallSection">
+                            <h3 class="greyContactTitle">8-900-000-00-00</h3>
+                            <p class="greyContactsText">Москва</p>
+                          </div>
+                          <div class="mapInfoSmallSection">
+                            <h3 class="greyContactTitle">8-900-000-00-00</h3>
+                            <p class="greyContactsText">Россия</p>
+                          </div>
+                        </div>
+                        <button class="copyButton"></button>
+                      </div>
+                      <div class="mapInfoSection">
+                        <div class="mapCopySection">
+                          <div class="mapInfoSmallSection">
+                            <h3 class="greyContactTitle">metall-market@mail.ru</h3>
+                            <p class="greyContactsText">Ежедневно 9:00 — 18:00</p>
+                          </div>
+                        </div>
+                        <button class="copyButton"></button>
+                      </div>
+                      <div class="mapInfoSmallSection">
+                        <h3 class="greyContactTitle">Адрес</h3>
+                        <p class="greyContactsText">123456, г. Москва, ул. Ленина 3А, помещ. 2-7</p>
+                      </div>
+                      <div class="mapInfoSmallSection">
+                        <h3 class="greyContactTitle">Время работы</h3>
+                        <p class="greyContactsText">Москва</p>
+                      </div>
+                    </div>
+                    <div class="mapInfoButtons">
+                      <button class="mapInfoButton mapInfoDownload">
+                        <img src="icons/download.svg" alt="download icon">Карта проезда
+                      </button>
+                      <button class="mapInfoButton mapInfoOrderCall">
+                        <img src="icons/phone-white.svg" alt="download icon">Заказать звонок
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="slider-wrapper">
+              <ul class="image-list" id="image-list-1">
+                <img class="image-item" src="images/office-1.jpg" alt="img-1" />
+                <img class="image-item" src="images/office-2.jpg" alt="img-2" />
+                <img class="image-item" src="images/office-3.jpg" alt="img-3" />
+                <img class="image-item" src="images/office-1.jpg" alt="img-4" />
+                <img class="image-item" src="images/office-2.jpg" alt="img-5" />
+                <img class="image-item" src="images/office-3.jpg" alt="img-6" />
+                <img class="image-item" src="images/office-1.jpg" alt="img-7" />
+                <img class="image-item" src="images/office-2.jpg" alt="img-8" />
+                <img class="image-item" src="images/office-1.jpg" alt="img-9" />
+                <img class="image-item" src="images/office-3.jpg" alt="img-10" />
+              </ul>
+              <div class="slider-controls-gallery">
+                <div class="slider-scrollbar"  id="slider-scrollbar-1">
+                  <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                  </div>
+                </div>
+                <button id="prev-slide-1" class="slide-button material-symbols-rounded" disabled>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="svgArrow" d="M16 20L8 12L16 4" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <button id="next-slide-1" class="slide-button material-symbols-rounded">
+                  <svg width="24" height="24" viewBox="0 0 24 24" stroke="white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="svgArrow" d="M8 20L16 12L8 4" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+            <div class="slider-wrapper">
+              <div class="slider-workers-title-container">
+                <div>
+                  <h1 class="slider-workers-title">Наша команда</h1>
+                  <p class="slider-workers-description">Металл-Маркет — это команда профессионалов, влюбленных в свое дело. <br />
+                    Уверены, что развитие компании начинается с развития ее сотрудников.</p>
+                </div>
+                <div class="slider-button-container">
+                  <button id="prev-slide-2" class="slide-button material-symbols-rounded" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="svgArrow" d="M16 20L8 12L16 4" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                  <button id="next-slide-2" class="slide-button material-symbols-rounded">
+                    <svg width="24" height="24" viewBox="0 0 24 24" stroke="white" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="svgArrow" d="M8 20L16 12L8 4" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <ul class="image-list" id="image-list-2">
+                <li class="image-item">
+                  <img src="images/worker-1.jpg" alt="img-1" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-2.jpg" alt="img-2" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-3.jpg" alt="img-3" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-4.jpg" alt="img-4" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-1.jpg" alt="img-5" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-2.jpg" alt="img-6" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-3.jpg" alt="img-7" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-4.jpg" alt="img-8" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-1.jpg" alt="img-9" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+                <li class="image-item">
+                  <img src="images/worker-2.jpg" alt="img-10" />
+                  <div class="image-item-info">
+                    <h3 class="worker-name">Ворончихин<br /> Сергей Вячеславович</h3>
+                    <p class="worker-job">Директор</p>
+                  </div>
+                </li>
+              </ul>
+              <div class="slider-controls-workers">
+                <div class="slider-scrollbar" id="slider-scrollbar-2">
+                  <div class="scrollbar-track">
+                    <div class="scrollbar-thumb"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="requisitesContainer">
+            <div class="requisitesInfo">
+              <h1>Реквизиты</h1>
+              <p>Металл-Маркет — компания, которая dolor sit amet consectetur.
+                Ac sem nisi nullam mi odio. Justo eu egestas arcu rhoncus et.
+                leifend morbi sit proin sed proin.
+                Mattis purus sit malesuada in praesent ac nisi convallis. Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div class="downloadRequisitesContainer">
+              <button class="downloadRequisitesButton">
+                <img src="icons/download.svg" alt="downlod icon">
+              </button>
+              <div>
+                <h4>Скачать реквизиты</h4>
+                <p>Скачать pdf файл</p>
+              </div>
+            </div>
+            <div class="requisitesTable">
+              <div class="tableTitle">Полное наименование</div>
+              <div class="tableName">Металл-Маркет</div>
+              <div class="tableTitle">Юридический адрес</div>
+              <div class="tableName">123456, Россия, Москва, ул. Ленина, 145а, 801</div>
+              <div class="tableTitle">ИНН</div>
+              <div class="tableName">1234567890</div>
+              <div class="tableTitle">КПП</div>
+              <div class="tableName">123456789</div>
+              <div class="tableTitle">ОГРН</div>
+              <div class="tableName">1234567890987</div>
+              <div class="tableTitle">Расчетный счет</div>
+              <div class="tableName">12345678909876543210</div>
+              <div class="tableTitle">Корреспондентский счет</div>
+              <div class="tableName">12345678909876543210</div>
+              <div class="tableTitle">БИК</div>
+              <div class="tableName">123456789</div>
+              <div class="tableTitle">Банк</div>
+              <div class="tableName">ПАО «Сбербанк»</div>
+              <div class="tableTitle">Директор</div>
+              <div class="tableName">Лебедев Кирилл Александрович</div>
+            </div>
+          </section>
+          <img class="steelCoreLogo" src="images/steelCoreLogo.png">
+        </main>
+        <footer class="footer">
+          <div class="footerNav">
+            <div class="footerAbout footerNavElement">
+              <h3>О нас</h3>
+              <p>О компании</p>
+              <p>Вакансии</p>
+              <p>Портфолио</p>
+              <p>Сертификаты</p>
+              <p>Реквизиты</p>
+              <p>Вопрос — ответ</p>
+            </div>
+            <div class="footerForClients footerNavElement">
+              <h3>Покупателям</h3>
+              <p>Каталог</p>
+              <p>Справочники</p>
+              <p>Сервис</p>
+              <p>Доставка</p>
+              <p>Оплата</p>
+              <p>Прайс — лист</p>
+            </div>
+          </div>
+          <div class="footerContacts">
+            <div class="footerContactsPhones">
+              <div class="footerContactsSection footerFirstNumber">
+                <h3>8-900-000-00-00</h3>
+                <p>Москва</p>
+              </div>
+              <div class="footerContactsSection">
+                <h3>8-900-000-00-00</h3>
+                <p>Россия</p>
+              </div>
+            </div>
+            <div class="footerContactsInfo">
+              <div class="footerContactsSection">
+                <h3>metall-market@mail.ru</h3>
+                <p>Ежедневно 9:00 — 18:00</p>
+              </div>
+              <div class="footerContactsSection">
+                <h3>Адрес</h3>
+                <p>123456, г. Москва, ул. Ленина 3А, помещ. 2-7</p>
+              </div>
+              <div class="footerContactsSection">
+                <h3>Время работы</h3>
+                <p>Ежедневно 9:00 — 18:00</p>
+              </div>
+            </div>
+          </div>
+          <div class="footerPolitics">
+            <p class="footerPoliticsFirst">Пользовательское соглашение</p>
+            <p>Политика обработки данных</p>
+          </div>
+          <div class="footerWarning">
+            <p>
+              Сайт Металл-Маркет носит исключительно информационный характер
+              и ни при каких условиях не является публичной офертой, определяемой положениями ГК РФ.
+              Для получения подробной информации о наличии, видах, характеристиках и стоимости материалов, пожалуйста,
+              обращайтесь в офис продаж.
+            </p>
+          </div>
+          <div class="footerYear">
+            <p>© 2023</p>
+          </div>
+          <div class="footerDeveloper">
+            <p>Инфо о разроботчике</p>
+          </div>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
+
+
