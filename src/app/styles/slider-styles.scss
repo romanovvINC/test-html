@@ -34,6 +34,9 @@
     width: 552px;
     height: 396px;
     object-fit: cover;
+    @media screen and (max-width: 768px) {
+        height: 252px;
+    }
 }
 
 .slider-scrollbar {
@@ -116,52 +119,6 @@
     margin-right: 16px;
 }
 
-/* Styles for tablets */
-@media only screen and (max-width: 768px) {
-    .slider-wrapper .slide-button {
-        display: none !important;
-    }
-
-    .slider-wrapper .image-list {
-        scroll-snap-type: x mandatory;
-    }
-
-    .slider-scrollbar .scrollbar-thumb {
-        width: 20%;
-    }
-
-    #image-list-2 {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-@media only screen and (max-width: 1440px) {
-    .slider-wrapper .image-list {
-        gap: 24px;
-        scroll-snap-type: x mandatory;
-    }
-}
-
-@media only screen and (max-width: 375px) {
-    .slider-wrapper .image-list {
-        gap: 24px;
-        scroll-snap-type: x mandatory;
-    }
-
-    #image-list-2 {
-        grid-template-columns: repeat(10, 1fr);
-    }
-
-    #image-list-1 .image-item {
-        width: 351px;
-        height: 252px;
-    }
-
-    #image-list-2 .image-item {
-        width: 100%;
-    }
-}
-
 //workers slider styles
 
 .slider-controls-workers {
@@ -238,5 +195,54 @@
             padding: 0;
             color: #818181;
         }
+    }
+    @media only screen and (max-width: 375px) {
+        width: 90%;
+        > img {
+            width: 100%;
+        }
+    }
+}
+
+/* Styles for tablets */
+
+@media only screen and (max-width: 1440px) {
+    .slider-wrapper .image-list {
+        gap: 24px;
+        scroll-snap-type: x mandatory;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .slider-wrapper .slide-button {
+        display: none !important;
+    }
+
+    .slider-wrapper .image-list {
+        scroll-snap-type: x mandatory;
+    }
+
+    .slider-scrollbar .scrollbar-thumb {
+        width: 20%;
+    }
+
+    .slider-wrapper #image-list-2 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .slider-wrapper .image-list {
+        gap: 24px;
+        scroll-snap-type: x mandatory;
+    }
+
+    #image-list-2 {
+        grid-template-columns: repeat(10, 1fr) !important;
+    }
+
+    .slider-wrapper #image-list-1 .image-item {
+        width: 351px;
+        height: 252px;
     }
 }
